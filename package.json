@@ -12,7 +12,7 @@
     "start-x": "npm run copy-deps-x && npm run build && es-dev-server --node-resolve --watch"
   },
   "author": "Simon Voges (simon.voges@guidecom.de)",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@pdftron/webviewer": "8.2.0"
   },
