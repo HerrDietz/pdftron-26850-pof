@@ -1,0 +1,23 @@
+{
+  "name": "pdftron-820-pof",
+  "version": "1.0.0",
+  "description": "Proof of failure for pdftron webviewer 8.2.0 (#26850)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "copy-deps-win": "xcopy \"./node_modules/@pdftron/webviewer/public/.\" \"./dist/public/webviewer\" /e /i /h /y",
+    "copy-deps-x": "cp -a ./node_modules/@pdftron/webviewer/public/. ./dist/public/webviewer",
+    "build": "esbuild run-pdftron.js --bundle --outfile=run-pdftron-bundle.js",
+    "start": "npm run copy-deps-win && npm run build && es-dev-server --node-resolve --watch"
+    "start-x": "npm run copy-deps-x && npm run build && es-dev-server --node-resolve --watch"
+  },
+  "author": "Simon Voges (simon.voges@guidecom.de)",
+  "license": "ISC",
+  "dependencies": {
+    "@pdftron/webviewer": "8.2.0"
+  },
+  "devDependencies": {
+    "es-dev-server": "^2.1.0",
+    "esbuild": "^0.14.2"
+  }
+}
